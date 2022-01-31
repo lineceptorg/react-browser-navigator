@@ -1,8 +1,10 @@
 # Introduction
 
+## A Single React Hook to Access Browser Navigator Properties
+
 This package serves as the React implementation of the Navigator interface. The Navigator interface represents the state and the identity of the user agent. It allows scripts to query it and to register themselves to carry on some activities.
 
-This package is intended to be used with any React project to access the bower’s `windows.navigator` property.
+This package is intended to be used with any React project to access the brower’s `windows.navigator` property.
 
 # Installation
 
@@ -21,7 +23,7 @@ import useNavigator from 'react-browser-navigator';
 
 function App() {
     // Accessible Properties
-    let { networkStatus, geoLocation, language, languages, browserVer, userAgentData, vendor } = useNavigator();
+    let { networkStatus, getCurrentPosition, language, languages, browserVer, userAgentData, vendor } = useNavigator();
 
     // * Navigator Properties
 
@@ -30,12 +32,12 @@ function App() {
         console.log('networkStatus', networkStatus);
     }, [networkStatus]);
 
-    // geoLocation
+    // getCurrentPosition
     useEffect(() => {
-        if (!isNull(geoLocation)) {
-        console.log('geoLocation', geoLocation);
+        if (!isNull(getCurrentPosition)) {
+        console.log('getCurrentPosition', getCurrentPosition);
         }
-    }, [geoLocation]);
+    }, [getCurrentPosition]);
 
     // lang, langs
     useEffect(() => {

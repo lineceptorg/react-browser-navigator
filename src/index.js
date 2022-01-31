@@ -36,7 +36,7 @@ function useNavigator() {
       setGeoLocationStatus(pos);
     });
   }, [setGeoLocationStatus]);
-  let geoLocation = geoLocationStatus;
+  let getCurrentPosition = geoLocationStatus;
 
   // # lang and lang
   // Returns a DOMString representing the preferred language of the user, usually the language of the browser UI. The null value is returned when this is unknown.
@@ -82,7 +82,7 @@ function useNavigator() {
 
   return {
     networkStatus,
-    geoLocation,
+    getCurrentPosition,
     language,
     languages,
     browserVer,

@@ -1,6 +1,6 @@
 {
   "name": "react-browser-navigator",
-  "description": "React Hooks to access browser navigator properties.",
+  "description": "A single react hook to access browser navigator properties.",
   "license": "MIT",
   "author": "Linecept <lineceptpm@gmail.com> David Kutas david@linecept.com, Akos Toth akos@linecept.com",
   "repository": {
