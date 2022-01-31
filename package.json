@@ -42,7 +42,6 @@
     "offLine",
     "language",
     "languages",
-    "geoLocation",
     "getCurrentPosition",
     "vendor",
     "userAgent",
