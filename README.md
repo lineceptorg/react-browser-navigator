@@ -2,7 +2,15 @@
 
 ## A Single React Module to Access Browser Navigator Properties
 
-This package serves as the React implementation of the [Navigator interface](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) (`windows.navigator`). Among other things, the Navigator interface allows us to get useful information out of the browser such as network connection (`onLine`) and the geographic coordinates of the browser (`geoLocation`).
+This package serves as the React implementation of the [Navigator interface](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) (`windows.navigator`). Among other things, the Navigator interface allows us to get useful information out of the browser such as **network connection** (`onLine`) and the **geographic coordinates** of the browser (`geoLocation`).
+
+## LIVE DEMO
+
+Follow the white rabbit: https://react-browser-navigator.netlify.app/
+
+## GIF
+
+![react-browser-navigator-online-geolocation.gif](react-browser-navigator-online-geolocation.gif){ width=100% }
 
 # Installation
 
@@ -47,7 +55,7 @@ Implements `Navigator.onLine`.
 import useNavigator from "react-browser-navigator";
 
 function App() {
-  // Accessible Properties
+  // accessible properties
   let { networkStatus } = useNavigator();
 
   return (
@@ -62,29 +70,36 @@ function App() {
 }
 ```
 
-<!-- ### getCurrentPosition
+### geoLocation
 
-Implements `geolocation`.
+Implements `Navigator.getCurrentPosition`. You can use the entire object, but for the sake of simplicity we just show the latitude and longitude here!
 
-```
-
+```js
 // import the module
-import useNavigator from 'react-browser-navigator';
+import useNavigator from "react-browser-navigator";
 
 function App() {
-// Accessible Properties
-let { getCurrentPosition } = useNavigator();
+  // accessible properties
+  let { getCurrentPosition } = useNavigator();
 
-    return (
-        <div>
-            {networkStatus === true ? <span>We are online!</span> : <span>We are offline!</span>}
-            {language && <span>{language}</span>}
-        </div>
-    );
+  // getCurrentPosition
+  useEffect(() => {
+    if (!isNull(getCurrentPosition)) {
+      // printing out the entire object
+      console.log("getCurrentPosition", getCurrentPosition);
+    }
+  }, [getCurrentPosition]);
 
+  return (
+    <div>
+      <span>Latidude:</span> {getCurrentPosition?.coords.latitude}
+      <br />
+      <br />
+      <span>Longitude:</span> {getCurrentPosition?.coords.longitude}
+    </div>
+  );
 }
-
-``` -->
+```
 
 ## Comprehensive Example
 

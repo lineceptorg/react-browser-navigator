@@ -7,7 +7,7 @@
     "url": "https://github.com/lineceptorg/react-browser-navigator",
     "type": "git"
   },
-  "version": "1.2.4",
+  "version": "1.2.8",
   "main": "src/index.js",
   "files": [
     "src"
