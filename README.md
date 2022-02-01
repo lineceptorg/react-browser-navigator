@@ -1,6 +1,4 @@
-# Introduction
-
-## A Single React Module to Access Browser Navigator Properties
+# A Single React Module to Access Browser Navigator Properties
 
 This package serves as the React implementation of the [Navigator interface](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) (`windows.navigator`). Among other things, the Navigator interface allows us to get useful information out of the browser such as **network connection** (`onLine`) and the **geographic coordinates** of the browser (`geoLocation`).
 
@@ -101,77 +99,141 @@ function App() {
 }
 ```
 
-## Comprehensive Example
+### language
 
-You can add the specific properties to `useEffect` as well in order to run side effects when data is obtained for a given property. [Lodash](https://www.npmjs.com/package/lodash) is required for some of the `useEffect` based usage.
+Implements `Navigator.language`. The preferred language of the user, usually the language of the browser UI. The `null` value is returned when this is unknown. This gives back a simple string.
 
 ```js
-// import the useNavigator hook
+// import the module
 import useNavigator from "react-browser-navigator";
 
 function App() {
-  // All Accessible Properties
-  let {
-    networkStatus,
-    getCurrentPosition,
-    language,
-    languages,
-    browserVer,
-    userAgentData,
-    vendor,
-  } = useNavigator();
-
-  // * Navigator Properties
-
-  // networkStatus
-  useEffect(() => {
-    console.log("networkStatus", networkStatus);
-  }, [networkStatus]);
+  // accessible properties
+  let { language } = useNavigator();
 
   // getCurrentPosition
   useEffect(() => {
-    if (!isNull(getCurrentPosition)) {
-      console.log("getCurrentPosition", getCurrentPosition);
+    if (!isNull(language)) {
+      // printing out the entire object
+      console.log("language", language);
     }
-  }, [getCurrentPosition]);
+  }, [language]);
 
-  // lang, langs
+  return (
+    <div>
+      <span>Language:</span> {language}
+    </div>
+  );
+}
+```
+
+### languages
+
+Implements `Navigator.languages`. Languages known to the user, by order of preference. This gives back an array of strings.
+
+```js
+// import the module
+import useNavigator from "react-browser-navigator";
+
+function App() {
+  // accessible properties
+  let { languages } = useNavigator();
+
+  // getCurrentPosition
   useEffect(() => {
-    if (!isNull(language) || !isNull(languages)) {
-      console.log("language:", language);
-      console.log("languages:", languages);
+    if (!isNull(languages)) {
+      // printing out the entire object
+      console.log("languages", languages);
     }
-  }, [language, languages]);
+  }, [language]);
 
-  // userBrowser
+  return (
+    <div>
+      <span>Languages:</span> {languages}
+    </div>
+  );
+}
+```
+
+### userAgent
+
+Implements `Navigator.userAgent`. User agent information (a string) for the current browser.
+
+```js
+// import the module
+import useNavigator from "react-browser-navigator";
+
+function App() {
+  // accessible properties
+  let { userAgent } = useNavigator();
+
+  // getCurrentPosition
   useEffect(() => {
-    if (!isNull(browserVer)) {
-      console.log("userBrowser", browserVer);
+    if (!isNull(userAgent)) {
+      // printing out the entire object
+      console.log("userAgent", userAgent);
     }
-  }, [browserVer]);
+  }, [userAgent]);
 
-  // userData
+  return (
+    <div>
+      <span>userAgent:</span> {userAgent}
+    </div>
+  );
+}
+```
+
+### userAgentData
+
+Implements `Navigator.userAgentData`. Gives access to information about the browser and operating system of the user. This gives an object.
+
+```js
+// import the module
+import useNavigator from "react-browser-navigator";
+
+function App() {
+  // accessible properties
+  let { userAgentData } = useNavigator();
+
+  // getCurrentPosition
   useEffect(() => {
     if (!isNull(userAgentData)) {
-      console.log("userData:", userAgentData);
+      // printing out the entire object
+      console.log("userAgentData", userAgentData);
     }
   }, [userAgentData]);
 
-  // vendor
+  return (
+    <div>
+      <span>userAgentData:</span> {userAgentData}
+    </div>
+  );
+}
+```
+
+### vendor
+
+Implements `Navigator.vendor`. Always either "Google Inc.", "Apple Computer, Inc.", or (in Firefox) the empty string. This gives back a string.
+
+```js
+// import the module
+import useNavigator from "react-browser-navigator";
+
+function App() {
+  // accessible properties
+  let { vendor } = useNavigator();
+
+  // getCurrentPosition
   useEffect(() => {
     if (!isNull(vendor)) {
-      console.log("userVendor:", vendor);
+      // printing out the entire object
+      console.log("vendor", vendor);
     }
   }, [vendor]);
 
   return (
     <div>
-      {networkStatus === true ? (
-        <span>We are online!</span>
-      ) : (
-        <span>We are offline!</span>
-      )}
-      {language && <span>{language}</span>}
+      <span>vendor:</span> {vendor}
     </div>
   );
 }
@@ -183,11 +245,11 @@ function App() {
 | :----: | :------------------: | :----------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------: | :-----: |
 |   ✅   |   `networkStatus`    |                                            Detects if browser is offline or online.                                            |                              Boolean                              |   ✅    |
 |   ✅   | `getCurrentPosition` |                                                    Geolocation of browser.                                                     | Object (`GeolocationPosition` including `coords` and `timestamp`) |   ✅    |
-|   ✅   |      `language`      | The preferred language of the user, usually the language of the browser UI. The `null` value is returned when this is unknown. |                         String or `null`                          |   ❌    |
-|   ✅   |     `languages`      |                                      Languages known to the user, by order of preference.                                      |                          Array of String                          |   ❌    |
-|   ✅   |     `browserVer`     |                                           User agent string for the current browser.                                           |                              String                               |   ❌    |
-|   ✅   |   `userAgentData`    |                        Gives access to information about the browser and operating system of the user.                         |                              Object                               |   ❌    |
-|   ✅   |       `vendor`       |                     Always either "Google Inc.", "Apple Computer, Inc.", or (in Firefox) the empty string.                     |                              String                               |   ❌    |
+|   ✅   |      `language`      | The preferred language of the user, usually the language of the browser UI. The `null` value is returned when this is unknown. |                         String or `null`                          |   ✅    |
+|   ✅   |     `languages`      |                                      Languages known to the user, by order of preference.                                      |                          Array of String                          |   ✅    |
+|   ✅   |     `userAgent`      |                                           User agent string for the current browser.                                           |                              String                               |   ✅    |
+|   ✅   |   `userAgentData`    |                        Gives access to information about the browser and operating system of the user.                         |                              Object                               |   ✅    |
+|   ✅   |       `vendor`       |                     Always either "Google Inc.", "Apple Computer, Inc.", or (in Firefox) the empty string.                     |                              String                               |   ✅    |
 
 # Roadmap
 

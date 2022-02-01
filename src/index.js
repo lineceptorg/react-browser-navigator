@@ -58,22 +58,22 @@ function useNavigator() {
   let languages = langsStatus;
 
   //# userAgent
-  //Rread-only property returns the user agent string for the current browser.
-  const [userBrowser, setUserBrowser] = useState(null);
+  //Read-only property returns the user agent string for the current browser.
+  const [userAgentStatus, setUserAgentStatus] = useState(null);
 
   useEffect(() => {
-    setUserBrowser(navigator.userAgent);
-  }, [setUserBrowser]);
-  let browserVer = userBrowser;
+    setUserAgentStatus(navigator.userAgent);
+  }, [setUserAgentStatus]);
+  let userAgent = userAgentStatus;
 
   //# userAgentData
   //The userAgentData read-only property, can be used to access the User-Agent Client Hints API.
-  const [userData, setUserData] = useState(null);
+  const [userAgentDataStatus, setUserAgentDataStatus] = useState(null);
 
   useEffect(() => {
-    setUserData(navigator.userAgentData);
-  }, [setUserData]);
-  let userAgentData = userData;
+    setUserData(navigator.userAgentDataStatus);
+  }, [setUserAgentDataStatus]);
+  let userAgentData = userAgentDataStatus;
 
   //# vendor
   //The value of the Navigator vendor property is always either "Google Inc.", "Apple Computer, Inc.", or (in Firefox) the empty string.
@@ -91,7 +91,7 @@ function useNavigator() {
     getCurrentPosition,
     language,
     languages,
-    browserVer,
+    userAgent,
     userAgentData,
     vendor,
   };
