@@ -175,6 +175,7 @@ We are planning to add more and more properties as well as other features.
 | :--------: | :-------------: | :---------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------ |
 |     ❌     |  `connection`   | Provides a NetworkInformation object containing information about the network connection of a device. | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection    |
 |     ❌     | `cookieEnabled` |                 Returns false if setting a cookie will be ignored and true otherwise.                 | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/cookieEnabled |
+|     ❌     |   ...more...    |                                              ...more...                                               | ..more...                                                                |
 
 ## Additional Features
 
@@ -182,7 +183,7 @@ We are planning to add more and more properties as well as other features.
 | :--------: | :------------------: | :-------------------------------------------: |
 |     ❌     |       Examples       | Example values for already addded properties  |
 |     ❌     |     Adding Tests     | Test Coverage Creating and adding test cases. |
-|     ❌     | Moving To Typescript |       Moving to codebase to TypeScript.       |
+|     ❌     | Moving To Typescript |      Moving the codebase to TypeScript.       |
 
 # License
 
