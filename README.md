@@ -181,7 +181,7 @@ We are planning to add more and more properties as well as other features.
 
 | **Status** |       **Item**       |                   **Notes**                   |
 | :--------: | :------------------: | :-------------------------------------------: |
-|     ❌     |       Examples       | Example values for already addded properties  |
+|     ❌     |       Examples       | Example values for already addded properties. |
 |     ❌     |     Adding Tests     | Test Coverage Creating and adding test cases. |
 |     ❌     | Moving To Typescript |      Moving the codebase to TypeScript.       |
 
