@@ -2,9 +2,7 @@
 
 ## A Single React Module to Access Browser Navigator Properties
 
-This package serves as the React implementation of the Navigator interface. The Navigator interface represents the state and the identity of the user agent. It allows scripts to query it and to register themselves to carry on some activities.
-
-This package is intended to be used with any React project to access the brower’s `windows.navigator` property.
+This package serves as the React implementation of the [Navigator interface](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) (`windows.navigator`). Among other things, the Navigator interface allows us to get useful information out of the browser such as network connection (`onLine`) and the geographic coordinates of the browser (`geoLocation`).
 
 # Installation
 
@@ -16,23 +14,24 @@ npm install react-browser-navigator
 
 ## Quick Example
 
-```
+```js
 // import the module
-import useNavigator from 'react-browser-navigator';
-
+import useNavigator from "react-browser-navigator";
 
 function App() {
-    // Accessible Properties
-    let { networkStatus } = useNavigator();
+  // list accessible navigator properties (find them all below in a table)
+  let { networkStatus } = useNavigator();
 
-    return (
-        <div>
-            {networkStatus === true ? <span>We are online!</span> : <span>We are offline!</span>}
-            {language && <span>{language}</span>}
-        </div>
-    );
+  return (
+    <div>
+      {networkStatus === true ? (
+        <span>We are online!</span>
+      ) : (
+        <span>We are offline!</span>
+      )}
+    </div>
+  );
 }
-
 ```
 
 ## Property Based Examples
@@ -41,25 +40,26 @@ The following examples are giving ideas how the module can be used.
 
 ### networkStatus
 
-Implements `onLine`.
+Implements `Navigator.onLine`.
 
-```
-
+```js
 // import the module
-import useNavigator from 'react-browser-navigator';
+import useNavigator from "react-browser-navigator";
 
 function App() {
-// Accessible Properties
-let { networkStatus } = useNavigator();
+  // Accessible Properties
+  let { networkStatus } = useNavigator();
 
-    return (
-        <div>
-            {networkStatus === true ? <span>We are online!</span> : <span>We are offline!</span>}
-        </div>
-    );
-
+  return (
+    <div>
+      {networkStatus === true ? (
+        <span>We are online!</span>
+      ) : (
+        <span>We are offline!</span>
+      )}
+    </div>
+  );
 }
-
 ```
 
 <!-- ### getCurrentPosition
@@ -88,69 +88,78 @@ let { getCurrentPosition } = useNavigator();
 
 ## Comprehensive Example
 
-You can add the specific properties to `useEffect` as well in order to run side effects when data is obtained for a given property. Lodash is required for some of the `useEffect` based usage.
+You can add the specific properties to `useEffect` as well in order to run side effects when data is obtained for a given property. [Lodash](https://www.npmjs.com/package/lodash) is required for some of the `useEffect` based usage.
 
-```
-
+```js
 // import the useNavigator hook
-import useNavigator from 'react-browser-navigator';
+import useNavigator from "react-browser-navigator";
 
 function App() {
-// All Accessible Properties
-let { networkStatus, getCurrentPosition, language, languages, browserVer, userAgentData, vendor } = useNavigator();
+  // All Accessible Properties
+  let {
+    networkStatus,
+    getCurrentPosition,
+    language,
+    languages,
+    browserVer,
+    userAgentData,
+    vendor,
+  } = useNavigator();
 
-    // * Navigator Properties
+  // * Navigator Properties
 
-    // networkStatus
-    useEffect(() => {
-        console.log('networkStatus', networkStatus);
-    }, [networkStatus]);
+  // networkStatus
+  useEffect(() => {
+    console.log("networkStatus", networkStatus);
+  }, [networkStatus]);
 
-    // getCurrentPosition
-    useEffect(() => {
-        if (!isNull(getCurrentPosition)) {
-        console.log('getCurrentPosition', getCurrentPosition);
-        }
-    }, [getCurrentPosition]);
+  // getCurrentPosition
+  useEffect(() => {
+    if (!isNull(getCurrentPosition)) {
+      console.log("getCurrentPosition", getCurrentPosition);
+    }
+  }, [getCurrentPosition]);
 
-    // lang, langs
-    useEffect(() => {
-        if (!isNull(language) || !isNull(languages)) {
-        console.log('language:', language);
-        console.log('languages:', languages);
-        }
-    }, [language, languages]);
+  // lang, langs
+  useEffect(() => {
+    if (!isNull(language) || !isNull(languages)) {
+      console.log("language:", language);
+      console.log("languages:", languages);
+    }
+  }, [language, languages]);
 
-    // userBrowser
-    useEffect(() => {
-        if (!isNull(browserVer)) {
-        console.log('userBrowser', browserVer);
-        }
-    }, [browserVer]);
+  // userBrowser
+  useEffect(() => {
+    if (!isNull(browserVer)) {
+      console.log("userBrowser", browserVer);
+    }
+  }, [browserVer]);
 
-    // userData
-    useEffect(() => {
-        if (!isNull(userAgentData)) {
-        console.log('userData:', userAgentData);
-        }
-    }, [userAgentData]);
+  // userData
+  useEffect(() => {
+    if (!isNull(userAgentData)) {
+      console.log("userData:", userAgentData);
+    }
+  }, [userAgentData]);
 
-    // vendor
-    useEffect(() => {
-        if (!isNull(vendor)) {
-        console.log('userVendor:', vendor);
-        }
-    }, [vendor]);
+  // vendor
+  useEffect(() => {
+    if (!isNull(vendor)) {
+      console.log("userVendor:", vendor);
+    }
+  }, [vendor]);
 
-    return (
-        <div>
-            {networkStatus === true ? <span>We are online!</span> : <span>We are offline!</span>}
-            {language && <span>{language}</span>}
-        </div>
-    );
-
+  return (
+    <div>
+      {networkStatus === true ? (
+        <span>We are online!</span>
+      ) : (
+        <span>We are offline!</span>
+      )}
+      {language && <span>{language}</span>}
+    </div>
+  );
 }
-
 ```
 
 # Already Mapped Properties
@@ -185,11 +194,22 @@ We are planning to add more and more properties as well as other features.
 |     ❌     |     Adding Tests     | Test Coverage Creating and adding test cases. |
 |     ❌     | Moving To Typescript |      Moving the codebase to TypeScript.       |
 
+## Credits
+
+Special thanks to:
+
+- [MDN Navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) - the Navigator represents the state and the identity of the user agent. It allows scripts to query it and to register themselves to carry on some activities.
+
+## Support the Authors
+
+Do you like this project? Star the repository, spread the word - it really helps. You may want to follow
+me on [Twitter](https://twitter.com/davidtkutas).
+
 # License
 
 MIT License
 
-Copyright (c) 2022 Linecept, David Kutas, Akos Toth
+Copyright (c) 2022 Linecept, David Kutas, Akos Toth.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
