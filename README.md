@@ -10,7 +10,7 @@ Follow the white rabbit: https://react-browser-navigator.netlify.app/
 
 ## GIF
 
-![react-browser-navigator-online-geolocation.gif](react-browser-navigator-online-geolocation.gif){ width=100% }
+![https://i.imgur.com/HbGVRcM.gif](https://i.imgur.com/HbGVRcM.gif)
 
 # Installation
 
@@ -179,15 +179,15 @@ function App() {
 
 # Already Mapped Properties
 
-|     **Property**     |                                                              Note                                                              |                               Type                                | Example |
-| :------------------: | :----------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------: | :-----: |
-|   `networkStatus`    |                                            Detects if browser is offline or online.                                            |                              Boolean                              |   ❌    |
-| `getCurrentPosition` |                                                    Geolocation of browser.                                                     | Object (`GeolocationPosition` including `coords` and `timestamp`) |   ❌    |
-|      `language`      | The preferred language of the user, usually the language of the browser UI. The `null` value is returned when this is unknown. |                         String or `null`                          |   ❌    |
-|     `languages`      |                                      Languages known to the user, by order of preference.                                      |                          Array of String                          |   ❌    |
-|     `browserVer`     |                                           User agent string for the current browser.                                           |                              String                               |   ❌    |
-|   `userAgentData`    |                        Gives access to information about the browser and operating system of the user.                         |                              Object                               |   ❌    |
-|       `vendor`       |                     Always either "Google Inc.", "Apple Computer, Inc.", or (in Firefox) the empty string.                     |                              String                               |   ❌    |
+| Status |     **Property**     |                                                              Note                                                              |                               Type                                | Example |
+| :----: | :------------------: | :----------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------: | :-----: |
+|   ✅   |   `networkStatus`    |                                            Detects if browser is offline or online.                                            |                              Boolean                              |   ✅    |
+|   ✅   | `getCurrentPosition` |                                                    Geolocation of browser.                                                     | Object (`GeolocationPosition` including `coords` and `timestamp`) |   ✅    |
+|   ✅   |      `language`      | The preferred language of the user, usually the language of the browser UI. The `null` value is returned when this is unknown. |                         String or `null`                          |   ❌    |
+|   ✅   |     `languages`      |                                      Languages known to the user, by order of preference.                                      |                          Array of String                          |   ❌    |
+|   ✅   |     `browserVer`     |                                           User agent string for the current browser.                                           |                              String                               |   ❌    |
+|   ✅   |   `userAgentData`    |                        Gives access to information about the browser and operating system of the user.                         |                              Object                               |   ❌    |
+|   ✅   |       `vendor`       |                     Always either "Google Inc.", "Apple Computer, Inc.", or (in Firefox) the empty string.                     |                              String                               |   ❌    |
 
 # Roadmap
 
@@ -199,15 +199,15 @@ We are planning to add more and more properties as well as other features.
 | :--------: | :-------------: | :---------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------ |
 |     ❌     |  `connection`   | Provides a NetworkInformation object containing information about the network connection of a device. | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection    |
 |     ❌     | `cookieEnabled` |                 Returns false if setting a cookie will be ignored and true otherwise.                 | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/cookieEnabled |
-|     ❌     |   ...more...    |                                              ...more...                                               | ..more...                                                                |
+|     ❌     |   ...more...    |                                              ...more...                                               | ...                                                                      |
 
 ## Additional Features
 
-| **Status** |       **Item**       |                   **Notes**                   |
-| :--------: | :------------------: | :-------------------------------------------: |
-|     ❌     |       Examples       | Example values for already addded properties. |
-|     ❌     |     Adding Tests     | Test Coverage Creating and adding test cases. |
-|     ❌     | Moving To Typescript |      Moving the codebase to TypeScript.       |
+|   **Status**   |       **Item**       |                   **Notes**                   |
+| :------------: | :------------------: | :-------------------------------------------: |
+| Partially Done |       Examples       |    Examples for already addded properties.    |
+|       ❌       |     Adding Tests     | Test Coverage Creating and adding test cases. |
+|       ❌       | Moving To Typescript |      Moving the codebase to TypeScript.       |
 
 ## Credits
 
