@@ -1,6 +1,6 @@
 # Introduction
 
-## A Single React Hook to Access Browser Navigator Properties
+## A Single React Module to Access Browser Navigator Properties
 
 This package serves as the React implementation of the Navigator interface. The Navigator interface represents the state and the identity of the user agent. It allows scripts to query it and to register themselves to carry on some activities.
 
@@ -14,16 +14,90 @@ npm install react-browser-navigator
 
 # Usage
 
-## In the browser
+## Quick Example
 
 ```
-// import the useNavigator hook
+// import the module
 import useNavigator from 'react-browser-navigator';
 
 
 function App() {
     // Accessible Properties
-    let { networkStatus, getCurrentPosition, language, languages, browserVer, userAgentData, vendor } = useNavigator();
+    let { networkStatus } = useNavigator();
+
+    return (
+        <div>
+            {networkStatus === true ? <span>We are online!</span> : <span>We are offline!</span>}
+            {language && <span>{language}</span>}
+        </div>
+    );
+}
+
+```
+
+## Property Based Examples
+
+The following examples are giving ideas how the module can be used.
+
+### networkStatus
+
+Implements `onLine`.
+
+```
+
+// import the module
+import useNavigator from 'react-browser-navigator';
+
+function App() {
+// Accessible Properties
+let { networkStatus } = useNavigator();
+
+    return (
+        <div>
+            {networkStatus === true ? <span>We are online!</span> : <span>We are offline!</span>}
+        </div>
+    );
+
+}
+
+```
+
+<!-- ### getCurrentPosition
+
+Implements `geolocation`.
+
+```
+
+// import the module
+import useNavigator from 'react-browser-navigator';
+
+function App() {
+// Accessible Properties
+let { getCurrentPosition } = useNavigator();
+
+    return (
+        <div>
+            {networkStatus === true ? <span>We are online!</span> : <span>We are offline!</span>}
+            {language && <span>{language}</span>}
+        </div>
+    );
+
+}
+
+``` -->
+
+## Comprehensive Example
+
+You can add the specific properties to `useEffect` as well in order to run side effects when data is obtained for a given property. Lodash is required for some of the `useEffect` based usage.
+
+```
+
+// import the useNavigator hook
+import useNavigator from 'react-browser-navigator';
+
+function App() {
+// All Accessible Properties
+let { networkStatus, getCurrentPosition, language, languages, browserVer, userAgentData, vendor } = useNavigator();
 
     // * Navigator Properties
 
@@ -74,9 +148,42 @@ function App() {
             {language && <span>{language}</span>}
         </div>
     );
+
 }
 
 ```
+
+# Already Mapped Properties
+
+|     **Property**     |                                                              Note                                                              |                               Type                                | Example |
+| :------------------: | :----------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------: | :-----: |
+|   `networkStatus`    |                                            Detects if browser is offline or online.                                            |                              Boolean                              |   ❌    |
+| `getCurrentPosition` |                                                    Geolocation of browser.                                                     | Object (`GeolocationPosition` including `coords` and `timestamp`) |   ❌    |
+|      `language`      | The preferred language of the user, usually the language of the browser UI. The `null` value is returned when this is unknown. |                         String or `null`                          |   ❌    |
+|     `languages`      |                                      Languages known to the user, by order of preference.                                      |                        Array of DOMString                         |   ❌    |
+|     `browserVer`     |                                           User agent string for the current browser.                                           |                              String                               |   ❌    |
+|   `userAgentData`    |                                                               x                                                                |                              Example                              |   ❌    |
+|       `vendor`       |                     Always either "Google Inc.", "Apple Computer, Inc.", or (in Firefox) the empty string.                     |                              String                               |   ❌    |
+
+# Roadmap
+
+We are planning to add more and more properties as well as other features.
+
+## All Properties
+
+| **Status** |  **Property**   |                                               **Notes**                                               | **Source**                                                               |
+| :--------: | :-------------: | :---------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------ |
+|     ❌     |  `connection`   | Provides a NetworkInformation object containing information about the network connection of a device. | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection    |
+|     ❌     | `cookieEnabled` |                 Returns false if setting a cookie will be ignored and true otherwise.                 | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/cookieEnabled |
+|     ❌     |      `xyz`      |                                                  xyz                                                  | xyz                                                                      |
+
+## Additional Features
+
+| **Status** |       **Item**       |                   **Notes**                   |
+| :--------: | :------------------: | :-------------------------------------------: |
+|     ❌     |       Examples       | Example values for already addded properties  |
+|     ❌     |     Adding Tests     | Test Coverage Creating and adding test cases. |
+|     ❌     | Moving To Typescript |       Moving to codebase to TypeScript.       |
 
 # License
 

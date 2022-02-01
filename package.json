@@ -1,13 +1,13 @@
 {
   "name": "react-browser-navigator",
-  "description": "A single react hook to access browser navigator properties.",
+  "description": "A single react module to access browser navigator properties.",
   "license": "MIT",
-  "author": "Linecept <lineceptpm@gmail.com> David Kutas david@linecept.com, Akos Toth akos@linecept.com",
+  "author": "Linecept <lineceptpm@gmail.com> David Kutas <david@linecept.com>, Akos Toth <akos@linecept.com>",
   "repository": {
-    "url": "https://www.npmjs.com/package/react-browser-navigator",
-    "type": "npm"
+    "url": "https://github.com/lineceptorg/react-browser-navigator",
+    "type": "git"
   },
-  "version": "1.1.1",
+  "version": "1.1.7",
   "main": "src/index.js",
   "files": [
     "src"
@@ -46,6 +46,8 @@
     "vendor",
     "userAgent",
     "userAgentData",
+    "connection",
+    "cookieEnabled",
     "react",
     "react-hooks"
   ],
