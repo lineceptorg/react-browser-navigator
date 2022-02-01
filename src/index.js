@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 // # UseNavigator is a hook that implements browser navigator interface functions
 // The Navigator interface represents the state and the identity of the user agent. It allows scripts to
@@ -8,19 +8,21 @@ function useNavigator() {
   // # onLine - used as netWorkStatus
   // Returns the online status of the browser. The property returns a boolean value, with true meaning online and false meaning offline.
   const getNetworkStatus = () =>
-    typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean' ? navigator.onLine : true;
+    typeof navigator !== "undefined" && typeof navigator.onLine === "boolean"
+      ? navigator.onLine
+      : true;
   const [networkStatus, setNetworkStatus] = useState(getNetworkStatus());
 
   const setNetworkOnlineFunction = () => setNetworkStatus(true);
   const setNetworkOfflineFunction = () => setNetworkStatus(false);
 
   useEffect(() => {
-    window.addEventListener('online', setNetworkOnlineFunction);
-    window.addEventListener('offline', setNetworkOfflineFunction);
+    window.addEventListener("online", setNetworkOnlineFunction);
+    window.addEventListener("offline", setNetworkOfflineFunction);
 
     return () => {
-      window.removeEventListener('online', setNetworkOnlineFunction);
-      window.removeEventListener('offline', setNetworkOfflineFunction);
+      window.removeEventListener("online", setNetworkOnlineFunction);
+      window.removeEventListener("offline", setNetworkOfflineFunction);
     };
   }, []);
 
@@ -82,7 +84,7 @@ function useNavigator() {
   }, [setUserVendor]);
   let vendor = userVendor;
 
-  // !------ further data from the navigator to be added
+  // !------ further properties from the navigator to be added thru PRs.
 
   return {
     networkStatus,
