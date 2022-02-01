@@ -160,9 +160,9 @@ let { networkStatus, getCurrentPosition, language, languages, browserVer, userAg
 |   `networkStatus`    |                                            Detects if browser is offline or online.                                            |                              Boolean                              |   ❌    |
 | `getCurrentPosition` |                                                    Geolocation of browser.                                                     | Object (`GeolocationPosition` including `coords` and `timestamp`) |   ❌    |
 |      `language`      | The preferred language of the user, usually the language of the browser UI. The `null` value is returned when this is unknown. |                         String or `null`                          |   ❌    |
-|     `languages`      |                                      Languages known to the user, by order of preference.                                      |                        Array of DOMString                         |   ❌    |
+|     `languages`      |                                      Languages known to the user, by order of preference.                                      |                          Array of String                          |   ❌    |
 |     `browserVer`     |                                           User agent string for the current browser.                                           |                              String                               |   ❌    |
-|   `userAgentData`    |                                                               x                                                                |                              Example                              |   ❌    |
+|   `userAgentData`    |                        Gives access to information about the browser and operating system of the user.                         |                              Object                               |   ❌    |
 |       `vendor`       |                     Always either "Google Inc.", "Apple Computer, Inc.", or (in Firefox) the empty string.                     |                              String                               |   ❌    |
 
 # Roadmap
@@ -175,7 +175,6 @@ We are planning to add more and more properties as well as other features.
 | :--------: | :-------------: | :---------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------ |
 |     ❌     |  `connection`   | Provides a NetworkInformation object containing information about the network connection of a device. | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection    |
 |     ❌     | `cookieEnabled` |                 Returns false if setting a cookie will be ignored and true otherwise.                 | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/cookieEnabled |
-|     ❌     |      `xyz`      |                                                  xyz                                                  | xyz                                                                      |
 
 ## Additional Features
 
