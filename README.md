@@ -2,6 +2,13 @@
 
 This package serves as the React implementation of the [Navigator interface](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) (`windows.navigator`). Among other things, the Navigator interface allows us to get useful information out of the browser such as **network connection** (`onLine`) and the **geographic coordinates** of the browser (`geoLocation`).
 
+### Properties you can use:
+
+🔌 **Is there internet connection?**
+🌎 **What's the location of your user?**
+🗣️ **What language(s) the user's computer support?**
+💻 **What computer the user use?**
+
 ## LIVE DEMO
 
 Follow the white rabbit: https://react-browser-navigator.netlify.app/
@@ -53,7 +60,7 @@ Implements `Navigator.onLine`.
 import useNavigator from "react-browser-navigator";
 
 function App() {
-  // accessible properties
+  // importing the property
   let { networkStatus } = useNavigator();
 
   return (
@@ -77,13 +84,14 @@ Implements `Navigator.getCurrentPosition`. You can use the entire object, but fo
 import useNavigator from "react-browser-navigator";
 
 function App() {
-  // accessible properties
+  // importing the property
   let { getCurrentPosition } = useNavigator();
 
-  // getCurrentPosition
+  // importing the property
   useEffect(() => {
     if (!isNull(getCurrentPosition)) {
-      // printing out the entire object
+      // you can use it within the useEffect hook OR simply print the
+      // string into the return statement
       console.log("getCurrentPosition", getCurrentPosition);
     }
   }, [getCurrentPosition]);
@@ -108,13 +116,14 @@ Implements `Navigator.language`. The preferred language of the user, usually the
 import useNavigator from "react-browser-navigator";
 
 function App() {
-  // accessible properties
+  // importing the property
   let { language } = useNavigator();
 
   // getCurrentPosition
   useEffect(() => {
     if (!isNull(language)) {
-      // printing out the entire object
+      // you can use it within the useEffect hook OR simply print the
+      // string into the return statement
       console.log("language", language);
     }
   }, [language]);
@@ -136,13 +145,13 @@ Implements `Navigator.languages`. Languages known to the user, by order of prefe
 import useNavigator from "react-browser-navigator";
 
 function App() {
-  // accessible properties
+  // importing the property
   let { languages } = useNavigator();
 
-  // getCurrentPosition
   useEffect(() => {
     if (!isNull(languages)) {
-      // printing out the entire object
+      // you can use it within the useEffect hook OR simply print the
+      // string into the return statement
       console.log("languages", languages);
     }
   }, [language]);
@@ -164,13 +173,14 @@ Implements `Navigator.userAgent`. User agent information (a string) for the curr
 import useNavigator from "react-browser-navigator";
 
 function App() {
-  // accessible properties
+  // importing the property
   let { userAgent } = useNavigator();
 
   // getCurrentPosition
   useEffect(() => {
     if (!isNull(userAgent)) {
-      // printing out the entire object
+      // you can use it within the useEffect hook OR simply print the
+      // string into the return statement
       console.log("userAgent", userAgent);
     }
   }, [userAgent]);
@@ -192,13 +202,14 @@ Implements `Navigator.userAgentData`. Gives access to information about the brow
 import useNavigator from "react-browser-navigator";
 
 function App() {
-  // accessible properties
+  // importing the property
   let { userAgentData } = useNavigator();
 
   // getCurrentPosition
   useEffect(() => {
     if (!isNull(userAgentData)) {
-      // printing out the entire object
+      // you can use it within the useEffect hook OR simply print the
+      // string into the return statement
       console.log("userAgentData", userAgentData);
     }
   }, [userAgentData]);
@@ -220,13 +231,14 @@ Implements `Navigator.vendor`. Always either "Google Inc.", "Apple Computer, Inc
 import useNavigator from "react-browser-navigator";
 
 function App() {
-  // accessible properties
+  // importing the property
   let { vendor } = useNavigator();
 
   // getCurrentPosition
   useEffect(() => {
     if (!isNull(vendor)) {
-      // printing out the entire object
+      // you can use it within the useEffect hook OR simply print the
+      // string into the return statement
       console.log("vendor", vendor);
     }
   }, [vendor]);
