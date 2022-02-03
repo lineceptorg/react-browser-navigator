@@ -68,6 +68,7 @@ function App() {
   // importing the property
   let { networkStatus } = useNavigator();
 
+  // using the property as a state within the render
   return (
     <div>
       {networkStatus === true ? (
@@ -92,11 +93,10 @@ function App() {
   // importing the property
   let { getCurrentPosition } = useNavigator();
 
-  // importing the property
+  // you can use it within the useEffect hook OR simply print the
+  // string into the return statement
   useEffect(() => {
     if (!isNull(getCurrentPosition)) {
-      // you can use it within the useEffect hook OR simply print the
-      // string into the return statement
       console.log("getCurrentPosition", getCurrentPosition);
     }
   }, [getCurrentPosition]);
@@ -124,11 +124,10 @@ function App() {
   // importing the property
   let { language } = useNavigator();
 
-  // getCurrentPosition
+  // you can use it within the useEffect hook OR simply print the
+  // string into the return statement
   useEffect(() => {
     if (!isNull(language)) {
-      // you can use it within the useEffect hook OR simply print the
-      // string into the return statement
       console.log("language", language);
     }
   }, [language]);
@@ -153,10 +152,10 @@ function App() {
   // importing the property
   let { languages } = useNavigator();
 
+  // you can use it within the useEffect hook OR simply print the
+  // string into the return statement
   useEffect(() => {
     if (!isNull(languages)) {
-      // you can use it within the useEffect hook OR simply print the
-      // string into the return statement
       console.log("languages", languages);
     }
   }, [language]);
@@ -181,11 +180,10 @@ function App() {
   // importing the property
   let { userAgent } = useNavigator();
 
-  // getCurrentPosition
+  // you can use it within the useEffect hook OR simply print the
+  // string into the return statement
   useEffect(() => {
     if (!isNull(userAgent)) {
-      // you can use it within the useEffect hook OR simply print the
-      // string into the return statement
       console.log("userAgent", userAgent);
     }
   }, [userAgent]);
@@ -210,11 +208,10 @@ function App() {
   // importing the property
   let { userAgentData } = useNavigator();
 
-  // getCurrentPosition
+  // you can use it within the useEffect hook OR simply print the
+  // string into the return statement
   useEffect(() => {
     if (!isNull(userAgentData)) {
-      // you can use it within the useEffect hook OR simply print the
-      // string into the return statement
       console.log("userAgentData", userAgentData);
     }
   }, [userAgentData]);
@@ -239,11 +236,10 @@ function App() {
   // importing the property
   let { vendor } = useNavigator();
 
-  // getCurrentPosition
+  // you can use it within the useEffect hook OR simply print the
+  // string into the return statement
   useEffect(() => {
     if (!isNull(vendor)) {
-      // you can use it within the useEffect hook OR simply print the
-      // string into the return statement
       console.log("vendor", vendor);
     }
   }, [vendor]);
