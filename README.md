@@ -17,6 +17,11 @@ Follow the white rabbit: https://react-browser-navigator.netlify.app/
 
 ![https://i.imgur.com/HbGVRcM.gif](https://i.imgur.com/HbGVRcM.gif)
 
+## dev.to Article:
+
+Read a short introduction about this new react-browser-navigator module:
+https://dev.to/linecept/access-to-location-network-status-and-other-browser-provided-properties-in-react-24fn
+
 # Installation
 
 ```
