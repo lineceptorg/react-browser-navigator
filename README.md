@@ -4,9 +4,9 @@ This package serves as the React implementation of the [Navigator interface](htt
 
 ### Properties you can use:
 
-🔌 **Is there internet connection?**
-🌎 **What's the location of your user?**
-🗣️ **What language(s) the user's computer support?**
+🔌 **Is there internet connection?**  
+🌎 **What's the location of your user?**  
+🗣️ **What language(s) the user's computer support?**  
 💻 **What computer the user use?**
 
 ## LIVE DEMO
