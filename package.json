@@ -3,11 +3,12 @@
   "description": "A single react module to access browser navigator properties.",
   "license": "MIT",
   "author": "Linecept <lineceptpm@gmail.com> David Kutas <david@linecept.com>, Akos Toth <akos@linecept.com>",
+  "homepage": "https://react-browser-navigator.netlify.app/",
   "repository": {
     "url": "https://github.com/lineceptorg/react-browser-navigator",
     "type": "git"
   },
-  "version": "1.3.2",
+  "version": "1.3.4",
   "main": "src/index.js",
   "files": [
     "src"
