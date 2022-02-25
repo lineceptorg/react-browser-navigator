@@ -71,7 +71,7 @@ function useNavigator() {
   const [userAgentDataStatus, setUserAgentDataStatus] = useState(null);
 
   useEffect(() => {
-    setUserData(navigator.userAgentDataStatus);
+    setUserAgentDataStatus(navigator.userAgentDataStatus);
   }, [setUserAgentDataStatus]);
   let userAgentData = userAgentDataStatus;
 
