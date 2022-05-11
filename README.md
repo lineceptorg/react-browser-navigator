@@ -2,7 +2,7 @@
 
 This package serves as the React implementation of the [Navigator interface](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) (`windows.navigator`). Among other things, the Navigator interface allows us to get useful information out of the browser such as **network connection** (`onLine`) and the **geographic coordinates** of the browser (`geoLocation`).
 
-### Properties you can use:
+### Properties you can use
 
 🔌 **Is there internet connection?**  
 🌎 **What's the location of the user?**  
@@ -11,16 +11,16 @@ This package serves as the React implementation of the [Navigator interface](htt
 
 ## LIVE DEMO
 
-Follow the white rabbit: https://react-browser-navigator.netlify.app/
+Follow the white rabbit: <https://react-browser-navigator.netlify.app/>
 
 ## GIF
 
 ![https://i.imgur.com/HbGVRcM.gif](https://i.imgur.com/HbGVRcM.gif)
 
-## dev.to Article:
+## dev.to Article
 
 Read a short introduction about this new react-browser-navigator module:
-https://dev.to/linecept/access-to-location-network-status-and-other-browser-provided-properties-in-react-24fn
+<https://dev.to/linecept/access-to-location-network-status-and-other-browser-provided-properties-in-react-24fn>
 
 # Installation
 
@@ -54,7 +54,7 @@ function App() {
 
 ## Property Based Examples
 
-The following examples are giving ideas how the module can be used.
+The following examples are giving ideas how the module can be used. Note: for some examples we use [lodash](https://www.npmjs.com/package/lodash)'s `isNull`.
 
 ### networkStatus
 
@@ -270,21 +270,21 @@ We are planning to add more and more properties as well as other features.
 
 ## All Properties
 
-| **No.** | **Status** |   **Property**   |                                               **Notes**                                               | **Source**                                                               |
-| :-----: | :--------: | :--------------: | :---------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------ |
-|    1    |     ❌     |   `connection`   | Provides a NetworkInformation object containing information about the network connection of a device. | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection    |
-|    2    |     ❌     | `cookieEnabled`  |                 Returns false if setting a cookie will be ignored and true otherwise.                 | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/cookieEnabled |
-|    3    |     ❌     |  `presentation`  |                             Returns a reference to the Presentation API.                              | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/presentation  |
-|    4    |     ❌     | `serviceWorker`  |    Provides access to registration, removal, upgrade, and communication for associated documents.     | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/serviceWorker |
-|    5    |     ❌     |    `storage`     |               Returns the StorageManager object used for estimating available storage.                | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/storage       |
-|    6    |     ❌     |   `webdriver`    |                     Indicates whether the user agent is controlled by automation.                     | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/webdriver     |
-|    7    |     ❌     |   `doNotTrack`   |                       Reports the value of the user's do-not-track preference.                        | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/doNotTrack    |
-|    8    |     ❌     |     `oscpu`      |                    Returns a string that represents the current operating system.                     | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/oscpu         |
-|    9    |     ❌     |    `plugins`     |                  Returns a PluginArray listing the plugins installed in the browser.                  | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/plugins       |
-|   10    |     ❌     | `setAppBadge()`  | Sets a badge on the icon associated with this app and returns a Promise that resolves with undefined. | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/setAppBadge   |
-|   11    |     ❌     |    `share()`     |                     Invokes the native sharing mechanism of the current platform.                     | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share         |
-|   12    |     ❌     |   `vibrate()`    |  Causes vibration on devices with support for it. Does nothing if vibration support isn't available.  | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate       |
-|   13    |     ❌     | `getUserMedia()` |       After permission, returns the audio or video stream associated to a camera or microphone.       | https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia  |
+| **No.** | **Status** |   **Property**   |                                               **Notes**                                               | **Source**                                                                 |
+| :-----: | :--------: | :--------------: | :---------------------------------------------------------------------------------------------------: | -------------------------------------------------------------------------- |
+|    1    |     ❌     |   `connection`   | Provides a NetworkInformation object containing information about the network connection of a device. | <https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection>    |
+|    2    |     ❌     | `cookieEnabled`  |                 Returns false if setting a cookie will be ignored and true otherwise.                 | <https://developer.mozilla.org/en-US/docs/Web/API/Navigator/cookieEnabled> |
+|    3    |     ❌     |  `presentation`  |                             Returns a reference to the Presentation API.                              | <https://developer.mozilla.org/en-US/docs/Web/API/Navigator/presentation>  |
+|    4    |     ❌     | `serviceWorker`  |    Provides access to registration, removal, upgrade, and communication for associated documents.     | <https://developer.mozilla.org/en-US/docs/Web/API/Navigator/serviceWorker> |
+|    5    |     ❌     |    `storage`     |               Returns the StorageManager object used for estimating available storage.                | <https://developer.mozilla.org/en-US/docs/Web/API/Navigator/storage>       |
+|    6    |     ❌     |   `webdriver`    |                     Indicates whether the user agent is controlled by automation.                     | <https://developer.mozilla.org/en-US/docs/Web/API/Navigator/webdriver>     |
+|    7    |     ❌     |   `doNotTrack`   |                       Reports the value of the user's do-not-track preference.                        | <https://developer.mozilla.org/en-US/docs/Web/API/Navigator/doNotTrack>    |
+|    8    |     ❌     |     `oscpu`      |                    Returns a string that represents the current operating system.                     | <https://developer.mozilla.org/en-US/docs/Web/API/Navigator/oscpu>         |
+|    9    |     ❌     |    `plugins`     |                  Returns a PluginArray listing the plugins installed in the browser.                  | <https://developer.mozilla.org/en-US/docs/Web/API/Navigator/plugins>       |
+|   10    |     ❌     | `setAppBadge()`  | Sets a badge on the icon associated with this app and returns a Promise that resolves with undefined. | <https://developer.mozilla.org/en-US/docs/Web/API/Navigator/setAppBadge>   |
+|   11    |     ❌     |    `share()`     |                     Invokes the native sharing mechanism of the current platform.                     | <https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share>         |
+|   12    |     ❌     |   `vibrate()`    |  Causes vibration on devices with support for it. Does nothing if vibration support isn't available.  | <https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate>       |
+|   13    |     ❌     | `getUserMedia()` |       After permission, returns the audio or video stream associated to a camera or microphone.       | <https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia>  |
 
 ## Additional Features
 
